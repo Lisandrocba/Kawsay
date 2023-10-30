@@ -1,70 +1,47 @@
 import React, { useState } from "react";
 import { Button, Jumbotron } from "react-bootstrap";
 
-export default function Calculator() {
-  const [input, setInput] = useState({
-    //electrico
-    people: 1,
-    pc: false,
-    radio: false,
-    impresora: false,
-    microondas: false,
-    dispenser: false,
-    pava: false,
-    lavarropa: false,
-    heladera: false,
-    tv: false,
-    //gas
-    cocina: false,
-    termotanque: false,
-    estufa: false,
-    //auto
-    useCar: false,
-    carDistance: 1,
-    carShare: 1,
-    //transporte publico
-    publicTransport: false,
-    train: false,
-    subway: false,
-    bus: false,
-    taxi: false,
-    publicHours: 1,
-    //totales
+const initialState = {
+  //electrico
+  people: 1,
+  pc: false,
+  radio: false,
+  impresora: false,
+  microondas: false,
+  dispenser: false,
+  pava: false,
+  lavarropa: false,
+  heladera: false,
+  tv: false,
+  //gas
+  cocina: false,
+  termotanque: false,
+  estufa: false,
+  //auto
+  useCar: false,
+  carDistance: 1,
+  carShare: 1,
+  //transporte publico
+  publicTransport: false,
+  train: false,
+  subway: false,
+  bus: false,
+  taxi: false,
+  publicHours: 1,
+  //totales
 
-    total: 1,
-  });
+  total: 1,
+};
+
+export default function Calculator() {
+  const [input, setInput] = useState(initialState);
 
   const [location, setLocation] = useState("start");
 
   const handleButton = () => {
     switch (location) {
       case "start":
-        setInput({
-          people: 1,
-          pc: false,
-          radio: false,
-          impresora: false,
-          microondas: false,
-          dispenser: false,
-          pava: false,
-          lavarropa: false,
-          heladera: false,
-          tv: false,
-          cocina: false,
-          termotanque: false,
-          estufa: false,
-          useCar: false,
-          carDistance: 1,
-          carShare: 1,
-          publicTransport: false,
-          train: false,
-          subway: false,
-          bus: false,
-          taxi: false,
-          publicHours: 1,
-
-          total: 1,
-        });
+        setInput(initialState);
         setLocation("question1");
         break;
       case "question1":
@@ -92,42 +69,17 @@ export default function Calculator() {
       case "question5":
         var edesur = 0;
         var metrogas = 0;
-        if (input.pc) {
-          edesur += 0.0106;
-        }
-        if (input.radio) {
-          edesur += 0.029;
-        }
-        if (input.impresora) {
-          edesur += 0.4355;
-        }
-        if (input.microondas) {
-          edesur += 0.3097;
-        }
-        if (input.dispenser) {
-          edesur += 0.121;
-        }
-        if (input.pava) {
-          edesur += 1.1613;
-        }
-        if (input.lavarropa) {
-          edesur += 0.9481;
-        }
-        if (input.heladera) {
-          edesur += 0.0564;
-        }
-        if (input.tv) {
-          edesur += 0.0263;
-        }
-        if (input.cocina) {
-          metrogas += 0.0228;
-        }
-        if (input.termotanque) {
-          metrogas += 0.0228;
-        }
-        if (input.estufa) {
-          metrogas += 0.5558;
-        }
+        edesur = input.pc ? edesur += 0.0106 : edesur
+        edesur = input.radio ? edesur += 0.029 : edesur
+        edesur = input.impresora ? edesur += 0.4355 : edesur
+        edesur = input.dispenser ? edesur += 0.121 : edesur
+        edesur = input.pava ? edesur += 1.1613 : edesur
+        edesur =  input.lavarropa ? edesur += 0.9481 : edesur
+        edesur = input.heladera ? edesur += 0.0564 : edesur
+        edesur = input.tv ? edesur += 0.0263 : edesur
+        edesur = input.cocina ? metrogas += 0.0228 : edesur    
+        edesur = input.termotanque ? metrogas += 0.0228 : edesur 
+        edesur = input.estufa ? metrogas += 0.5558 : edesur
 
         var sub = (edesur * 6 * 365 + metrogas * 4 * 365) / input.people;
 
@@ -205,7 +157,7 @@ export default function Calculator() {
       >
         {/* start */}
         {location === "start" ? (
-          <div className='min-vh-100'>
+          <div className="min-vh-100">
             <div>
               <h1 className="my-2 parH text-left font-weight-bold pl-2">
                 <span className="titleH">¡Bienvenido a </span>Kawsay!
