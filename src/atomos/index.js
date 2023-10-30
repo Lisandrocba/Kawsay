@@ -14,4 +14,4 @@ import Resalt from "./Resalt";
 
 
 
-export {Start, Question1, Question2,Question3,Question4,Question4A, Question4b, Question5, Question5a, Question5b}
+export {Start, Question1, Question2,Question3,Question4,Question4A, Question4b, Question5, Question5a, Question5b, Resalt}
