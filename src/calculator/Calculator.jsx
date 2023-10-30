@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { Button, Jumbotron } from "react-bootstrap";
 import { Start } from "../atomos";
+import {Question1} from "../atomos";
+import {Question2} from "../atomos";
+import {Question3} from "../atomos";
+import {Question4} from "../atomos";
+import {Question4A} from "../atomos";
+
 
 
 const initialState = {
@@ -167,283 +173,32 @@ export default function Calculator() {
         }
 
         {/* question1 */}
-        {location === "question1" ? (
-          <div>
-            <h2 className="font-italic text-muted">¿Con cuanta gente vives?</h2>
-            <input
-              type="number"
-              name="people"
-              min="1"
-              value={input.people}
-              onChange={handleInput}
-              placeholder="Ingrese la cantidad"
-            />
-            <br />
-            <Button
-              className="my-2"
-              variant="flat"
-              size="lg"
-              onClick={() => handleButton()}
-            >
-              Continuar
-            </Button>
-            <br />
-            <Button
-              className="mt-1"
-              variant="flat"
-              size="sm"
-              onClick={() => setLocation("start")}
-            >
-              Volver al Inicio
-            </Button>
-          </div>
-        ) : (
+        {location === "question1" ? 
+          <Question1 handleButton = {handleButton} />
+         : (
           <div />
         )}
         {/* question2 */}
         {location === "question2" ? (
-          <div className="font-italic text-muted">
-            <h2>¿Cuales de estos electrodomesticos utilizas?</h2>
-            <h4 className="mb-4">(puede marcar tantos como quiera)</h4>
-            <div>
-              <input
-                type="checkbox"
-                name="pc"
-                value={input.pc}
-                checked={input.pc}
-                defaultChecked={false}
-                onClick={() => setInput({ ...input, pc: !input.pc })}
-                className="mx-2"
-              />
-              PC
-            </div>
-            <div>
-              <input
-                type="checkbox"
-                name="radio"
-                value={input.radio}
-                checked={input.radio}
-                defaultChecked={false}
-                onClick={() => setInput({ ...input, radio: !input.radio })}
-                className="mx-2"
-              />
-              Radio
-            </div>
-            <div>
-              <input
-                type="checkbox"
-                name="impresora"
-                value={input.impresora}
-                checked={input.impresora}
-                defaultChecked={false}
-                onClick={() =>
-                  setInput({ ...input, impresora: !input.impresora })
-                }
-                className="mx-2"
-              />
-              Impresora
-            </div>
-            <div>
-              <input
-                type="checkbox"
-                name="microondas"
-                value={input.microondas}
-                checked={input.microondas}
-                defaultChecked={false}
-                onClick={() =>
-                  setInput({ ...input, microondas: !input.microondas })
-                }
-                className="mx-2"
-              />
-              Microondas
-            </div>
-            <div>
-              <input
-                type="checkbox"
-                name="dispenser"
-                value={input.dispenser}
-                checked={input.dispenser}
-                defaultChecked={false}
-                onClick={() =>
-                  setInput({ ...input, dispenser: !input.dispenser })
-                }
-                className="mx-2"
-              />
-              Dispenser
-            </div>
-            <div>
-              <input
-                type="checkbox"
-                name="pava"
-                value={input.pava}
-                checked={input.pava}
-                defaultChecked={false}
-                onClick={() => setInput({ ...input, pava: !input.pava })}
-                className="mx-2"
-              />
-              Pava electrica
-            </div>
-            <div>
-              <input
-                type="checkbox"
-                name="lavarropa"
-                value={input.lavarropa}
-                checked={input.lavarropa}
-                defaultChecked={false}
-                onClick={() =>
-                  setInput({ ...input, lavarropa: !input.lavarropa })
-                }
-                className="mx-2"
-              />
-              Lavarropa
-            </div>
-            <Button
-              className="my-3"
-              variant="flat"
-              size="lg"
-              onClick={() => handleButton()}
-            >
-              Continuar
-            </Button>
-            <br />
-            <Button
-              variant="flat"
-              size="sm"
-              onClick={() => setLocation("start")}
-            >
-              Volver al Inicio
-            </Button>
-          </div>
+          <Question2 handleButton = {handleButton} />
         ) : (
           <div />
         )}
         {/* question 3 */}
         {location === "question3" ? (
-          <div className="font-italic text-muted">
-            <h2>¿Cuales de estos utilizas con frecuencia?</h2>
-            <h4 className="mb-4">(puede marcar tantos como quiera)</h4>
-            <div>
-              <input
-                type="checkbox"
-                name="cocina"
-                value={input.cocina}
-                checked={input.cocina}
-                defaultChecked={false}
-                onClick={() => setInput({ ...input, cocina: !input.cocina })}
-                className="mx-2"
-              />
-              Cocina
-            </div>
-            <div>
-              <input
-                type="checkbox"
-                name="termotanque"
-                value={input.termotanque}
-                checked={input.termotanque}
-                defaultChecked={false}
-                onClick={() =>
-                  setInput({ ...input, termotanque: !input.termotanque })
-                }
-                className="mx-2"
-              />
-              Termotanque
-            </div>
-            <div>
-              <input
-                type="checkbox"
-                name="estufa"
-                value={input.estufa}
-                checked={input.estufa}
-                defaultChecked={false}
-                onClick={() => setInput({ ...input, estufa: !input.estufa })}
-                className="mx-2"
-              />
-              Estufa
-            </div>
-            <Button
-              className="my-3"
-              variant="flat"
-              size="lg"
-              onClick={() => handleButton()}
-            >
-              Continuar
-            </Button>
-            <br />
-            <Button
-              variant="flat"
-              size="sm"
-              onClick={() => setLocation("start")}
-            >
-              Volver al Inicio
-            </Button>
-          </div>
+          <Question3 handleButton = {handleButton} />
         ) : (
           <div />
         )}
         {/* question 4 */}
         {location === "question4" ? (
-          <div className="font-italic text-muted">
-            <h2 className="mb-4">¿Tenes vehiculo propio?</h2>
-            <input
-              type="checkbox"
-              name="useCar"
-              value={input.useCar}
-              checked={input.useCar}
-              defaultChecked={false}
-              onClick={() => setInput({ ...input, useCar: !input.useCar })}
-              className="mx-2"
-            />
-            <br />
-            <Button
-              className="my-3"
-              variant="flat"
-              size="lg"
-              onClick={() => handleButton()}
-            >
-              Continuar
-            </Button>
-            <br />
-            <Button
-              variant="flat"
-              size="sm"
-              onClick={() => setLocation("start")}
-            >
-              Volver al Inicio
-            </Button>
-          </div>
+          <Question4 handleButton = {handleButton} />
         ) : (
           <div />
         )}
         {/* question 4A */}
         {location === "question4A" ? (
-          <div className="font-italic text-muted">
-            <h2 className="mb-4">¿Que distancia recorres aprox. al mes?</h2>
-            <input
-              type="number"
-              name="carDistance"
-              min="1"
-              value={input.carDistance}
-              onChange={handleInput}
-              placeholder="Ingrese la cantidad"
-            />
-            <br />
-            <Button
-              className="my-3"
-              variant="flat"
-              size="lg"
-              onClick={() => handleButton()}
-            >
-              Continuar
-            </Button>
-            <br />
-            <Button
-              variant="flat"
-              size="sm"
-              onClick={() => setLocation("start")}
-            >
-              Volver al Inicio
-            </Button>
-          </div>
+          <Question4A handleButton = {handleButton} />
         ) : (
           <div />
         )}
