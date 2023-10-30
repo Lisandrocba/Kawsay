@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from "react-bootstrap";
 
-const Question2 = ({handleButton}) => {
+const Question2 = ({handleButton, input, setInput, setLocation}) => {
     <div className="font-italic text-muted">
             <h2>¿Cuales de estos electrodomesticos utilizas?</h2>
             <h4 className="mb-4">(puede marcar tantos como quiera)</h4>
@@ -116,4 +116,4 @@ const Question2 = ({handleButton}) => {
           </div>
 }
 
-export default question2
+export default Question2

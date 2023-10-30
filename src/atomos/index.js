@@ -1,20 +1,17 @@
 import Start from "./Start";
-<<<<<<< HEAD
+import Question1 from "./Question1";
+import Question2 from "./Question2";
+import Question3 from "./Question3";
+import Question4 from "./Question4";
+import Question4A from "./Question4A";
 import Question4b from "./Question4b";
 import Question5 from "./Question5";
 import Question5a from "./Question5a";
 import Question5b from "./Question5b";
-
-export {Start, Question4b, Question5, Question5a, Question5b}
-=======
-import question1 from "./Question1";
-import question2 from "./Question2";
-import question3 from "./Question3";
-import question4 from "./Question4";
-import question4A from "./Question4A";
+import Resalt from "./Resalt";
 
 
 
 
-export {Start,Question1,question2,question3,question4,question4A}
->>>>>>> 4c3798eceac4463fbebf955ae1c4ff1eea4deb27
+
+export {Start, Question1, Question2,Question3,Question4,Question4A, Question4b, Question5, Question5a, Question5b}

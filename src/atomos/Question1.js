@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button } from "react-bootstrap";
 
-const Question1 = ({handleButton}) => {
+const Question1 = ({handleButton, input, handleInput, setLocation}) => {
     return (
         <div>
         <h2 className="font-italic text-muted">¿Con cuanta gente vives?</h2>
@@ -35,5 +35,5 @@ const Question1 = ({handleButton}) => {
     )
   }
   
-  export default question1
+  export default Question1
   

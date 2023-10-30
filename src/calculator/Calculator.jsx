@@ -1,18 +1,18 @@
 import React, { useState } from "react";
-import { Button, Jumbotron } from "react-bootstrap";
-<<<<<<< HEAD
-import { Start, Question4b, Question5, Question5a, Question5b } from "../atomos";
+import { Jumbotron } from "react-bootstrap";
+import {
+  Start,
+  Question4b,
+  Question5,
+  Question5a,
+  Question5b,
+  Question1,
+  Question2,
+  Question3,
+  Question4,
+  Question4A,
+} from "../atomos";
 import Resalt from "../atomos/Resalt";
-=======
-import { Start } from "../atomos";
-import {Question1} from "../atomos";
-import {Question2} from "../atomos";
-import {Question3} from "../atomos";
-import {Question4} from "../atomos";
-import {Question4A} from "../atomos";
-
->>>>>>> 4c3798eceac4463fbebf955ae1c4ff1eea4deb27
-
 
 const initialState = {
   //electrico
@@ -82,17 +82,17 @@ export default function Calculator() {
       case "question5":
         var edesur = 0;
         var metrogas = 0;
-        edesur = input.pc ? edesur += 0.0106 : edesur
-        edesur = input.radio ? edesur += 0.029 : edesur
-        edesur = input.impresora ? edesur += 0.4355 : edesur
-        edesur = input.dispenser ? edesur += 0.121 : edesur
-        edesur = input.pava ? edesur += 1.1613 : edesur
-        edesur =  input.lavarropa ? edesur += 0.9481 : edesur
-        edesur = input.heladera ? edesur += 0.0564 : edesur
-        edesur = input.tv ? edesur += 0.0263 : edesur
-        edesur = input.cocina ? metrogas += 0.0228 : edesur    
-        edesur = input.termotanque ? metrogas += 0.0228 : edesur 
-        edesur = input.estufa ? metrogas += 0.5558 : edesur
+        edesur = input.pc ? (edesur += 0.0106) : edesur;
+        edesur = input.radio ? (edesur += 0.029) : edesur;
+        edesur = input.impresora ? (edesur += 0.4355) : edesur;
+        edesur = input.dispenser ? (edesur += 0.121) : edesur;
+        edesur = input.pava ? (edesur += 1.1613) : edesur;
+        edesur = input.lavarropa ? (edesur += 0.9481) : edesur;
+        edesur = input.heladera ? (edesur += 0.0564) : edesur;
+        edesur = input.tv ? (edesur += 0.0263) : edesur;
+        edesur = input.cocina ? (metrogas += 0.0228) : edesur;
+        edesur = input.termotanque ? (metrogas += 0.0228) : edesur;
+        edesur = input.estufa ? (metrogas += 0.5558) : edesur;
 
         var sub = (edesur * 6 * 365 + metrogas * 4 * 365) / input.people;
 
@@ -114,7 +114,6 @@ export default function Calculator() {
         setLocation("question5B");
         break;
       case "question5B":
-        
         var quantity = 0;
         var totalPublic = 0;
         if (input.train) {
@@ -169,74 +168,117 @@ export default function Calculator() {
         className="cover"
         style={{ backgroundImage: `url("http://i.ibb.co/jgZph3V/fondo.png")` }}
       >
-        {
-        location === "start" ? 
-          
-          <Start handleButton = {handleButton} />
-        : (
-          <div />
-        )
-        }
+        {location === "start" ? <Start handleButton={handleButton} /> : <div />}
 
         {/* question1 */}
-        {location === "question1" ? 
-          <Question1 handleButton = {handleButton} />
-         : (
+        {location === "question1" ? (
+          <Question1
+            handleInput={handleInput}
+            input={input}
+            handleButton={handleButton}
+            setLocation={setLocation}
+            setInput={setInput}
+          />
+        ) : (
           <div />
         )}
         {/* question2 */}
         {location === "question2" ? (
-          <Question2 handleButton = {handleButton} />
+          <Question2
+            handleInput={handleInput}
+            input={input}
+            handleButton={handleButton}
+            setLocation={setLocation}
+            setInput={setInput}
+          />
         ) : (
           <div />
         )}
         {/* question 3 */}
         {location === "question3" ? (
-          <Question3 handleButton = {handleButton} />
+          <Question3
+            handleInput={handleInput}
+            input={input}
+            handleButton={handleButton}
+            setLocation={setLocation}
+            setInput={setInput}
+          />
         ) : (
           <div />
         )}
         {/* question 4 */}
         {location === "question4" ? (
-          <Question4 handleButton = {handleButton} />
+          <Question4
+            handleInput={handleInput}
+            input={input}
+            handleButton={handleButton}
+            setLocation={setLocation}
+            setInput={setInput}
+          />
         ) : (
           <div />
         )}
         {/* question 4A */}
         {location === "question4A" ? (
-          <Question4A handleButton = {handleButton} />
+          <Question4A
+            handleInput={handleInput}
+            input={input}
+            handleButton={handleButton}
+            setLocation={setLocation}
+            setInput={setInput}
+          />
         ) : (
           <div />
         )}
-      
-        {
-        location === "question4B" ? 
-        <Question4b handleInput = {handleInput}  input={input} handleButton = {handleButton} setLocation={setLocation} />
-        : (
+
+        {location === "question4B" ? (
+          <Question4b
+            handleInput={handleInput}
+            input={input}
+            handleButton={handleButton}
+            setLocation={setLocation}
+          />
+        ) : (
           <div />
         )}
-        
+
         {/* question 5 */}
-        {location === "question5" ? 
-        <Question5 handleInput = {handleInput}  input={input} handleButton = {handleButton} setLocation={setLocation} setInput={setInput} />
-        : (
+        {location === "question5" ? (
+          <Question5
+            handleInput={handleInput}
+            input={input}
+            handleButton={handleButton}
+            setLocation={setLocation}
+            setInput={setInput}
+          />
+        ) : (
           <div />
         )}
         {/* question 5A */}
-        {location === "question5A" ? 
-          <Question5a   input={input} handleButton={handleButton} setLocation={setLocation} setInput={setInput} />
-        : (
+        {location === "question5A" ? (
+          <Question5a
+            input={input}
+            handleButton={handleButton}
+            setLocation={setLocation}
+            setInput={setInput}
+          />
+        ) : (
           <div />
         )}
         {/* question 5B */}
-        {location === "question5B" ? 
-          <Question5b handleInput={handleInput}  input={input} handleButton={handleButton} setLocation={setLocation}/>
-        : (
+        {location === "question5B" ? (
+          <Question5b
+            handleInput={handleInput}
+            input={input}
+            handleButton={handleButton}
+            setLocation={setLocation}
+          />
+        ) : (
           <div />
         )}
-        {location === "result" ? 
+        {location === "result" ? (
           <Resalt input={input} handleButton={handleButton} />
-        : (
+        ) : (
           <div />
         )}
       </Jumbotron>
