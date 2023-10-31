@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import { Container, ListGroup } from "react-bootstrap";
-import { useHistory } from "react-router-dom";
+//import { useHistory } from "react-router-dom";
 
 export default function EcoAdvice() {
   const [location, setLocation] = useState("");
-  const { push } = useHistory();
+//  const { push } = useHistory();
   return (
     <div
       className="cover font-italic text-muted"

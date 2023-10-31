@@ -138,7 +138,7 @@ export default function Calculator() {
         totalPublic += input.total;
         setInput({
           ...input,
-          total: totalPublic.toFix(2),
+          total: totalPublic,
         });
 
         setLocation("result");

@@ -5,6 +5,7 @@ const Question5 = ({input, handleButton, setLocation, setInput}) => {
   return (
     <div className="font-italic text-muted">
       <h2 className="mb-4">¿Usas con frecuencia transporte publico?</h2>
+      <div>
       <input
         type="checkbox"
         name="publicTransport"
@@ -15,6 +16,8 @@ const Question5 = ({input, handleButton, setLocation, setInput}) => {
           setInput({ ...input, publicTransport: !input.publicTransport })
         }
       />
+      ' si'
+      </div>
       <br />
       <Button
         className="my-3"

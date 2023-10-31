@@ -2,7 +2,7 @@ import React from 'react'
 import { Button } from "react-bootstrap";
 
 const Question4A = ({handleButton, input, handleInput, setLocation}) => {
-<div className="font-italic text-muted">
+return(<div className="font-italic text-muted">
             <h2 className="mb-4">¿Que distancia recorres aprox. al mes?</h2>
             <input
               type="number"
@@ -29,7 +29,7 @@ const Question4A = ({handleButton, input, handleInput, setLocation}) => {
             >
               Volver al Inicio
             </Button>
-          </div>
+          </div>)
 }
 
 export default Question4A

@@ -2,8 +2,9 @@ import React from 'react'
 import { Button } from "react-bootstrap";
 
 const Question4 = ({handleButton, input, setInput, setLocation}) => {
-    <div className="font-italic text-muted">
+return(    <div className="font-italic text-muted">
                 <h2 className="mb-4">¿Tenes vehiculo propio?</h2>
+                <div>
                 <input
                 type="checkbox"
                 name="useCar"
@@ -13,6 +14,8 @@ const Question4 = ({handleButton, input, setInput, setLocation}) => {
                 onClick={() => setInput({ ...input, useCar: !input.useCar })}
                 className="mx-2"
                 />
+                si
+                </div>
                 <br />
                 <Button
                 className="my-3"
@@ -30,7 +33,7 @@ const Question4 = ({handleButton, input, setInput, setLocation}) => {
                 >
                 Volver al Inicio
                 </Button>
-            </div>
+            </div>)
 }
 
 export default Question4

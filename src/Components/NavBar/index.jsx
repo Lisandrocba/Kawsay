@@ -1,10 +1,12 @@
 import { Nav, Navbar as NavbarBootstrap } from "react-bootstrap";
-import { Link, useHistory } from "react-router-dom";
+import { Link
+  //, useHistory 
+} from "react-router-dom";
 import LogoJCIComponent from "./LogoJCI/LogoJCI";
 import LogoKawsayComponent from "./LogoKawsay/LogoKawsay";
 
 const NavBar = () => {
-  const { push } = useHistory();
+  //const { push } = useHistory();
   return (
     <>
       <NavbarBootstrap collapseOnSelect expand="lg" bg="white">

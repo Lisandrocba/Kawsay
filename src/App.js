@@ -2,7 +2,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import "./CSS/App.css";
 import NavBar from "./Components/NavBar";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import Calculator from "./Calculator/Calculator.jsx";
+import Calculator from "./calculator/Calculator.jsx";
 import EcoAdvice from "./ecoAdvice.jsx";
 import Donate from "./Donate.jsx";
 import Newsletter from "./Newsletter.jsx";
